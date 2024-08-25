@@ -1,0 +1,103 @@
+.nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.6rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    /* justify-items: center; */
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #eaecef;
+
+    z-index: 2;
+
+    padding: 0.7rem 0 0.7rem 1.5rem;
+
+    .nav-left{
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c3e50;
+        position: relative;
+    }
+
+    .nav-right{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-search{
+        margin-right: 1rem;
+
+        input{
+            background: #fff url('../assets/search.svg') 0.6rem 0.5rem no-repeat;
+            border: 1px solid #cfd4db;
+            border-radius: 2rem;
+            width: 10rem;
+            height: 2rem;
+            background-size: 1rem;
+            padding: 0 .5rem 0 2rem;
+
+            transition: all .2s ease;
+        }
+
+        input:focus {
+            cursor: auto;
+            /* border-color: #3eaf7c; */
+            outline-color: #3eaf7c;
+        }
+    }
+
+    .nav-link{
+        line-height: 2rem;
+        font-size: .9rem;
+        margin-right: 1.5rem;
+
+        a{
+            line-height: 1.4rem;
+            /* font-weight: 500; */
+            text-decoration: none;
+            color: rgb(44, 62, 80);
+        }
+
+        span {
+            line-height: 1.4rem;
+            color: rgb(44, 62, 80)
+        }
+
+        svg {
+            position: relative;
+            top: -1px;
+            vertical-align: middle;
+        }
+    }
+
+    .nav-github{
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgb(44, 62, 80);
+        
+        line-height: 2rem;
+
+        svg {
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    @media (max-width: 719px) {
+        .nav-link, .nav-github{
+            display: none;
+        }
+        
+        .nav-search input {
+            cursor: pointer;
+            width: 0;
+            border-color: transparent;
+        }
+    }
+}
