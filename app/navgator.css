@@ -10,6 +10,9 @@
     /* justify-items: center; */
     justify-content: space-between;
     box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    
 
     border-bottom: 1px solid #eaecef;
 
@@ -17,16 +20,39 @@
 
     padding: 0.7rem 0 0.7rem 1.5rem;
 
-    .nav-left{
+    .nav-left {
         font-size: 1.3rem;
         font-weight: 600;
         color: #2c3e50;
         position: relative;
+        width: calc(100vw - 8rem);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        /* display: inline-block; */
+
+        .nav-icon{
+            width: 1.25rem;
+            height: 1.5rem;
+            display: block;
+            padding: 0.1rem;
+            padding-left: 0.6rem;
+            padding-top: 0.2rem;
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+        }
+
+        a{
+            display: inline-block;
+        }
     }
 
     .nav-right{
         display: flex;
         justify-content: space-between;
+        position: absolute;
+        right: 1.5rem;
     }
 
     .nav-search{
@@ -40,7 +66,7 @@
             height: 2rem;
             background-size: 1rem;
             padding: 0 .5rem 0 2rem;
-
+            
             transition: all .2s ease;
         }
 
@@ -98,6 +124,32 @@
             cursor: pointer;
             width: 0;
             border-color: transparent;
+            position: relative;
+            left: 1rem;
+        }
+
+        .nav-search input:focus {
+            width: 10rem !important;
+        }
+
+        .nav-left a {
+            padding-left: 3rem;
         }
     }
+
+    @media (min-width: 719px) {
+        .nav-icon{
+            display: none !important;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #3eaf7c;
+    cursor: pointer;
 }
